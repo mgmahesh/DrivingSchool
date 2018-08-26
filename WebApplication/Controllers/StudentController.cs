@@ -10,7 +10,7 @@ namespace WebApplication.Controllers
         {
             return View();
         }
-
+        // Mahesh
         [HttpPost]
         public ActionResult Registation(Student std)
         {

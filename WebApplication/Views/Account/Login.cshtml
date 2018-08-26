@@ -1,0 +1,39 @@
+﻿@using WebApplication.Models
+@model LoginViewModel
+@{
+
+    ViewBag.Title = "Log in";
+    Layout = null;
+}
+
+<link href="~/Content/style.css" rel="stylesheet" />
+<div class="login-page">
+    <div class="form">
+        <section id="content">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal ", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <h1>@ViewBag.Title.</h1>
+                <div>
+                    @*<input type="text" placeholder="Username" required="" id="username" />*@
+
+                    @Html.TextBoxFor(m => m.UserName)<br />
+                    @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    @Html.PasswordFor(m => m.Password)<br />
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    @*<input type="password" placeholder="Password" required="" id="password" />*@
+                </div>
+                <div>
+                    @*<input type="submit" value="Log in" />*@
+                    <input type="submit" value="Log in" />
+                    
+                    
+                </div>
+            }
+
+        </section>
+        <script src="~/Scripts/loginJs.js"></script>
+    </div></div>

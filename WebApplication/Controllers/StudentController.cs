@@ -5,7 +5,7 @@ namespace WebApplication.Controllers
 {
     public class StudentController : Controller
     {
-        // GET: Student
+        // GET: Student 
         public ActionResult Registation()
         {
             return View();
